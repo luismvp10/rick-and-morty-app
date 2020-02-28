@@ -1,0 +1,86 @@
+<div class="row mt-5 mb-5">
+  <h3>Characters</h3>
+  <div class="col-md-12">
+
+    <div class="row mb-5 mt-5">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="name">Character:</label>
+          <input class="form-control" id="name" placeholder="Insert a name"/>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <select class="form-control custom-select" (change)="changeStatus($event.target.value)">
+            <option selected> -- Select a status--</option>
+            <option>alive</option>
+            <option>dead</option>
+            <option >unknown</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select class="form-control custom-select" (change)="changeGender($event.target.value)">
+            <option selected> -- Select a gender--</option>
+            <option>female</option>
+            <option>male</option>
+            <option>genderless</option>
+            <option >unknown</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-md-12" *ngIf="characters.length>0">
+    <table class="table table-hover">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Origin</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let character of characters;">
+        <th scope="row">{{ character.id }}</th>
+        <td><img src="{{character.image}}" class="img-fluid profile"  alt="Responsive image"></td>
+        <td>{{ character.name }}</td>
+        <td> {{ character.status}}</td>
+        <td>{{ character.origin.name }}</td>
+        <td> <button class="btn btn-info"  [routerLink]="['/character', character.id]">See more...</button></td>
+      </tr>
+
+
+      </tbody>
+    </table>
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-itemgfvt">
+          <a  class="page-link"  *ngIf="currentPage!=1"(click)="pagination(-1)">Previous</a>
+        </li>
+        <li class="page-item " *ngFor="let page of counter(totalPages); let i=index " [ngClass]="{active: i+1==this.currentPage}">
+          <a class="page-link" (click)="pagination(i+1)" >{{i+1}}</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" *ngIf="currentPage!=totalPages" (click)="pagination(-2)">Next</a>
+        </li>
+      </ul>
+    </nav>
+
+
+
+
+  </div>
+  <app-not-results *ngIf="characters.length===0"></app-not-results>
+
+</div>

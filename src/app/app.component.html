@@ -1,0 +1,7 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<app-loading *ngIf="loading"></app-loading>
+<!-- <app-navbar *ngIf="!loading" [hidden]="hideElement && !auth" ></app-navbar> -->
+
+  <router-outlet *ngIf="!loading"></router-outlet>
+

@@ -1,0 +1,69 @@
+<div class="limiter animated fadeInLeft ">
+  <div class="container-login100">
+      <div class="wrap-login100 p-t-50 p-b-90">
+          <form class="login100-form validate-form flex-sb flex-w" (ngSubmit)="login( form )" #form="ngForm">
+
+              <span class="login100-form-title p-b-51">
+                  Login
+              </span>
+
+              <!-- <span class="text-danger">El correo es obligatorio</span> -->
+              <span *ngIf="email.invalid && (email.dirty || email.touched)"  class="text-danger animated fadeIn">Email is required</span> 
+              <span *ngIf="email.invalid && form.controls.email.errors.pattern"  class="text-danger animated fadeIn">Invalid email format</span> 
+              <div class="wrap-input100 m-b-16">
+                         <input class="input100" 
+                         type="email" 
+                         id="email"
+                         name="email" 
+                         [(ngModel)]="user.email"
+                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                         placeholder="Email"
+                         required #email="ngModel">
+
+
+                  <span class="focus-input100"></span>
+              </div>
+              
+              <!-- <span class="text-danger">La contraseña debe de ser más de 6 letras</span> -->
+              <span *ngIf="password.invalid && (password.dirty || password.touched)"  class="text-danger animated fadeIn">Password required</span>
+              <span *ngIf="password.invalid && password.errors.minlength"  class="text-danger animated fadeIn">Password must be at least 6 characters long</span> 
+              <div class="wrap-input100 m-b-16" data-validate = "Password is required">
+                 <input class="input100"
+                         type="password" 
+                         id="password"
+                         name="password" 
+                         [(ngModel)]="user.password"
+                         minlength="6"
+                         placeholder="Password"
+                         required
+                        #password="ngModel">
+                         
+                  <span class="focus-input100"></span>
+              </div>
+              
+              <div class="flex-sb-m w-full p-t-3 p-b-24">
+                  <div class="contact100-form-checkbox">
+                      <input [(ngModel)]="remember" class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                      <label class="label-checkbox100" for="ckb1">
+                          Remember me
+                      </label>
+                  </div>
+
+                  <div>
+                      <a routerLink="/register" class="txt1">
+                         Already have an account?
+                      </a>
+                  </div>
+              </div>
+
+              <div class="container-login100-form-btn m-t-17">
+                <button [disabled]="!form.valid" type="submit" class="btn btn-primary mb-5 ">Log In</button>
+                 <!--  <button class="login100-form-btn" type="submit">
+                      Ingresar
+                  </button> -->
+              </div>
+
+          </form>
+      </div>
+  </div>
+</div>
