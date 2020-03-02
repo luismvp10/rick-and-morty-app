@@ -56,13 +56,6 @@ export class ListCharacterComponent implements OnInit {
       .subscribe(( data: any) => {
         this.totalPages = data.info.pages;
         this.characters = data.results;
-      }, (error)=>{
-        Swal.fire({
-          icon: 'error',
-          title: 'Connection error',
-          text: error.statusText
-        });
-  
       });
   }
 
@@ -97,6 +90,6 @@ export class ListCharacterComponent implements OnInit {
     return new Array(i);
   }
 
- 
+
 
 }

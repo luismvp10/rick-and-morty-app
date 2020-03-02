@@ -15,8 +15,9 @@ import { ListLocationComponent } from './components/list-location/list-location.
 import { ListEpisodeComponent } from './components/list-episode/list-episode.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { InfoComponent } from './components/info/info.component';
 import { NotResultsComponent } from './components/shared/not-results/not-results.component';
 
 ////Services
@@ -24,7 +25,7 @@ import { AuthService } from './services/auth/auth.service';
 import {LocationService} from './services/location/location.service';
 import {CharacterService} from './services/character/character.service';
 import { EpisodeService } from './services/episode/episode.service';
-import { InfoComponent } from './components/info/info.component';
+
 
 
 

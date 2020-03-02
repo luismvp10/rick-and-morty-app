@@ -1,7 +1,6 @@
 <div class="row mt-5 mb-5">
   <h3>Episodes</h3>
 <!--   <div class="col-md-12">
-
     <div class="row mb-5 mt-5">
       <div class="col-md-12">
         <div class="form-group">
@@ -9,14 +8,11 @@
           <input type ="text" class="form-control" placeholder="Episode's number" (keyup)="changeNumberEpisode($event.target.value)"/>
         </div>
       </div>
-
- 
-
     </div>
-
   </div> -->
 
   <div class="col-md-12" *ngIf="episodes.length>0">
+    <div class="table-responsive">
     <table class="table table-hover">
       <thead class="thead-dark">
       <tr>
@@ -34,7 +30,7 @@
         <td>{{ e.name }}</td>
         <td>{{ e.air_date }}</td>
         <td>{{ e.episode }}</td>
-       
+
         <td> <button (click)="getCharacters(i)" type="button" class="btn btn-primary" data-toggle="modal"  data-target="#exampleModal">
           See Characters...
         </button></td>
@@ -43,6 +39,7 @@
 
       </tbody>
     </table>
+    </div>
     <nav aria-label="...">
       <ul class="pagination">
         <li class="page-itemgfvt">
@@ -61,7 +58,7 @@
 
 
   </div>
-  
+
 
 </div>
 <app-not-results *ngIf="episodes.length===0"></app-not-results>
@@ -95,7 +92,7 @@
             <td>{{ character.name }}</td>
             <td> {{ character.status}}</td>
             <td>{{ character.origin.name }}</td>
-            <td> <button class="btn btn-info"  [routerLink]="['/character', character.id]" data-dismiss="modal">See more...</button></td>
+            <td> <button class="btn btn-info"  [routerLink]="['../character', character.id]" data-dismiss="modal">See more...</button></td>
           </tr>
 
 

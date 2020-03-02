@@ -41,7 +41,6 @@ export class ListEpisodeComponent implements OnInit {
        
           this.totalPages = data.info.pages;
           this.episodes = data.results;
-     /*      console.log(data); */
         }, (error) => {
           Swal.fire({
             icon: 'error',

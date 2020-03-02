@@ -13,26 +13,26 @@ export class AppComponent implements OnInit{
   public hideElement = true;
   auth:boolean = false;
 
-  constructor(private router: Router, private authService: AuthService){
-    this.router.events.subscribe(event => {
-    /*   console.log(event ) */
-      if (event instanceof NavigationEnd) {
-      /*   console.log(event ); */
-        if (event.url.match('/login') || event.url.match('/register')) {
-     /*      console.log("Here"); */
-          if(!authService.isAunthentificated){
-            this.auth=false;
-          }
-          this.hideElement = true;
-          /* console.log("url login") */
-      } if(event.url.match('/home')){
-      
-        this.auth = true;
-        this.hideElement = false; 
-      }
-    }
-
-    });
+  constructor(){
+    // this.router.events.subscribe(event => {
+    // /*   console.log(event ) */
+    //   if (event instanceof NavigationEnd) {
+    //   /*   console.log(event ); */
+    //     if (event.url.match('/login') || event.url.match('/register')) {
+    //  /*      console.log("Here"); */
+    //       if(!authService.isAunthentificated){
+    //         this.auth=false;
+    //       }
+    //       this.hideElement = true;
+    //       /* console.log("url login") */
+    //   } if(event.url.match('/home')){
+    //
+    //     this.auth = true;
+    //     this.hideElement = false;
+    //   }
+    // }
+    //
+    // });
   }
 
   ngOnInit(): void {

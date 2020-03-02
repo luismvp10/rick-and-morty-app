@@ -28,6 +28,7 @@
   </div>
 
   <div class="col-md-12" *ngIf="locations.length>0">
+    <div class="table-responsive">
     <table class="table table-hover">
       <thead class="thead-dark">
       <tr>
@@ -52,7 +53,7 @@
 
 
       </tbody>
-    </table>
+    </table></div>
     <nav aria-label="...">
       <ul class="pagination">
         <li class="page-itemgfvt">
@@ -108,7 +109,7 @@
             <td>{{ character.name }}</td>
             <td> {{ character.status}}</td>
             <td>{{ character.origin.name }}</td>
-            <td> <button class="btn btn-info"  [routerLink]="['/character', character.id]" data-dismiss="modal">See more...</button></td>
+            <td> <button class="btn btn-info"  [routerLink]="['../character', character.id]" data-dismiss="modal">See more...</button></td>
           </tr>
 
 

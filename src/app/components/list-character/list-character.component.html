@@ -39,6 +39,7 @@
   </div>
 
   <div class="col-md-12" *ngIf="characters.length>0">
+    <div class="table-responsive">
     <table class="table table-hover">
       <thead class="thead-dark">
       <tr>
@@ -51,18 +52,19 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let character of characters;">
+      <tr *ngFor="let character of characters; let i = index">
         <th scope="row">{{ character.id }}</th>
         <td><img src="{{character.image}}" class="img-fluid profile"  alt="Responsive image"></td>
         <td>{{ character.name }}</td>
         <td> {{ character.status}}</td>
         <td>{{ character.origin.name }}</td>
-        <td> <button class="btn btn-info"  [routerLink]="['/character', character.id]">See more...</button></td>
+        <td> <button class="btn btn-info"  [routerLink]="['../character', character.id]">See more...</button></td>
       </tr>
 
 
       </tbody>
     </table>
+    </div>
     <nav aria-label="...">
       <ul class="pagination">
         <li class="page-itemgfvt">

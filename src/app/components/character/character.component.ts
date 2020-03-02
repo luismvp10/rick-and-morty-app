@@ -17,8 +17,14 @@ export class CharacterComponent implements OnInit {
           this.character = data;
         });
     });
+
+
+
+
   }
-ngOnInit(){
+ngOnInit() {
+
+
 }
 
 

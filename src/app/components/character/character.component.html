@@ -1,14 +1,14 @@
-<div class="container mt-5">
-  <h1>{{character.name | uppercase}} <small>({{ character.created | date:'yyyy'}})</small></h1>
+<div class="container mt-5" >
+  <h1 *ngIf="character.name">{{character.name | uppercase}} <small>({{ character.created | date:'yyyy'}})</small></h1>
   <div class="row mt-5 animated fadeIn">
     <div class="col-md-4">
       <img src="{{character.image}}" class="img-fluid" [alt]="">
       <br><br>
-      <a [routerLink]="['/characters'] " class="btn btn-outline-danger btn-block">Regresar</a>
+      <a [routerLink]="['/home/characters'] " class="btn btn-outline-danger btn-block">Regresar</a>
 
     </div>
     <div class="col-md-8">
-      <h3>{{character.name}}</h3>
+      <h3 *ngIf="character.name">{{character.name}}</h3>
       <hr>
       <p> <strong>Status: </strong>{{character.status}}</p>
       <p> <strong>Specie: </strong>{{character.species}}</p>
@@ -21,4 +21,5 @@
     </div>
   </div>
 </div>
+
 

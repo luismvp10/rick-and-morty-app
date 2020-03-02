@@ -9,12 +9,14 @@ export class CharacterService {
   env = environment;
   url: string = this.env.URI + '/character/';
 
-  
+
   constructor(private http: HttpClient) {}
 
 
 
+
   getCharacters(params: any= []) {
+
 
     const page = params[0]['page'];
     const name = params[0]['name'];
@@ -38,11 +40,13 @@ export class CharacterService {
   }
 
   getCharacter(id: number) {
-    return this.http.get(this.url + id);
+  return  this.http.get(this.url + id);
   }
 
   getOneCharacter(url: string){
       return this.http.get(url);
   }
+
+
 
 }
